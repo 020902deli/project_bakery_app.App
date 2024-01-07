@@ -5,10 +5,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:project_bakery_app"
     Shell.FlyoutBehavior="Disabled">
-
-    <ShellContent
+    <TabBar>
+        <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+        />
+    <ShellContent
+        Title="My Orders"
+        ContentTemplate="{DataTemplate local:OrderEntryPage}"
+        />    </TabBar>
 
 </Shell>

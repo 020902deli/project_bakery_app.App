@@ -5,7 +5,7 @@ public partial class OrderEntryPage : ContentPage
 {
 	public OrderEntryPage()
 	{
-		InitializeComponent();
+        InitializeComponent();
 	}
     protected override async void OnAppearing()
     {
