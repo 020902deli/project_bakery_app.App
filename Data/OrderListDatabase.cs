@@ -39,6 +39,11 @@ namespace project_bakery_app.Data
                 return _database.InsertAsync(baker);
             }
         }
+        public Task<int> DeleteBakerAsync(Baker baker)
+        {
+            return _database.DeleteAsync(baker);
+        }
+
 
         //pentru dessert
         public Task<int> SaveDessertAsync(Dessert dessert)

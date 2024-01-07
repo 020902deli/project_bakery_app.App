@@ -5,34 +5,45 @@
              Title="BakerPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
-            <Editor Placeholder="Nume" Margin="20"
-                    Text="{Binding Nume}"
-                    HeightRequest="50" />
-            <Editor Placeholder="Prenume" Margin="20"
+            <Label
+                    Text="Last Name:"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Start" />
+            <Editor Placeholder="Nume" 
+                    Text="{Binding Nume} "
+                    />
+            <Label
+                    Text="First Name:"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Start" />
+            <Editor Placeholder="Prenume" 
                     Text="{Binding Prenume}"
-                    HeightRequest="50" />
-            <Editor Placeholder="Email" Margin="20"
+                     />
+            <Label
+                    Text="Email:"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Start" />
+            <Editor Placeholder="Email" 
                     Text="{Binding Email}"
-                    HeightRequest="50" />
-            <Editor Placeholder="Telefon" Margin="20"
+                     />
+            <Label
+                    Text="Phone:"
+                    FontSize="Subtitle"
+                    HorizontalOptions="Start" />
+            <Editor Placeholder="Telefon"
                     Text="{Binding Telefon}"
-                    HeightRequest="50" />
-            
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                    <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
+                    />
+            <Grid ColumnSpacing="10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save Baker" Grid.Column="0"
-                        MaximumWidthRequest="200"
+                <Button Text="Save Baker" 
                         Clicked="OnSaveButtonClicked" />
-                
-                </Grid>
+                <Button Text="Delete Baker" Grid.Column="1" 
+                        Clicked="OnDeleteButtonClicked"/>
+            </Grid>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

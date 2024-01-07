@@ -14,6 +14,13 @@ public partial class BakerPage : ContentPage
         await App.Database.SaveBakerAsync(shop);
         await Navigation.PopAsync();
     }
+     async void OnDeleteButtonClicked(object sender, EventArgs e)
+    {
+        var b = (Baker)BindingContext;
+        await App.Database.DeleteBakerAsync(b);
+        await Navigation.PopAsync();
+        
+    }
     async void OnShowMapButtonClicked(object sender, EventArgs e)
     {
         var shop = (Baker)BindingContext;

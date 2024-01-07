@@ -68,10 +68,10 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Save"
+            <Button Text="Save Order"
             Clicked="OnSaveButtonClicked" />
             <Button Grid.Column="1"
-            Text="Delete"
+            Text="Delete Order"
             Clicked="OnDeleteButtonClicked"/>
         </Grid>
         <BoxView HeightRequest="10" Color="Transparent" />
@@ -84,6 +84,16 @@
                     Clicked="OnChooseButtonClicked"/>
             
         </Grid>
-        
+        <BoxView HeightRequest="10" Color="Transparent" />
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
+            <Button Text="Delete Dessert from Order" MaximumWidthRequest="300"
+            Clicked="OnDeleteClicked"/>
+
+        </Grid>
+
     </StackLayout>
 </ContentPage>

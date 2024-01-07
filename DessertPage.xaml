@@ -17,11 +17,13 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
                     <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <Button Text="Save Dessert" MaximumWidthRequest="200"
+                <Button Text="Save Dessert" 
                         Clicked="OnSaveButtonClicked" />
                 <Button Grid.Column="1"
-                        Text="Delete Dessert" MaximumWidthRequest="200"
+                        Text="Delete Dessert" 
                         Clicked="OnDeleteButtonClicked"/>
                 <ListView Grid.Row="1" Grid.Column="0" x:Name="listView"
                           Margin="20" IsRefreshing="True" >
@@ -32,8 +34,9 @@
                     </ListView.ItemTemplate>
                 </ListView>
                 <Button Grid.Row="2" Grid.Column="0" Text="Add to Order"
-                        MaximumWidthRequest="200"
+                        
                         Clicked="OnAddButtonClicked" />
+                
             </Grid>
         </StackLayout>
     </ContentPage.Content>

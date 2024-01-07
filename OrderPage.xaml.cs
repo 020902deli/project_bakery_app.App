@@ -1,4 +1,4 @@
-using Microsoft.Maui.Devices.Sensors;
+﻿using Microsoft.Maui.Devices.Sensors;
 using Plugin.LocalNotification;
 using project_bakery_app.Models;
 namespace project_bakery_app;
@@ -73,5 +73,19 @@ public partial class OrderPage : ContentPage
         });
 
     }
-    
+    async void OnDeleteClicked(object sender, EventArgs e)
+    {
+        if (listView.SelectedItem is Dessert selectedDessert)
+        {
+            // Elimină desertul din lista afișată
+            var orderList = (OrderList)BindingContext;
+            var desserts = (List<Dessert>)listView.ItemsSource;
+            desserts.Remove(selectedDessert);
+
+            // Reîmprospătează listView
+            listView.ItemsSource = null;
+            listView.ItemsSource = desserts;
+        }
+    }
+
 }
