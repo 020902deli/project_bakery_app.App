@@ -8,12 +8,12 @@ using SQLiteNetExtensions.Attributes;
 
 namespace project_bakery_app.Models
 {
-    public class Product
+    public class Dessert
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         public string Description { get; set; }
         [OneToMany]
-        public List<ListProduct> ListProducts { get; set; }
+        public List<ListDessert> ListDesserts { get; set; }
     }
 }

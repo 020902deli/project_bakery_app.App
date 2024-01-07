@@ -7,6 +7,13 @@ public partial class OrderPage : ContentPage
 	{
 		InitializeComponent();
 	}
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        var shopl = (OrderList)BindingContext;
+
+        listView.ItemsSource = await App.Database.GetListDessertsAsync(shopl.ID);
+    }
     async void OnSaveButtonClicked(object sender, EventArgs e)
     {
         var slist = (OrderList)BindingContext;
@@ -20,5 +27,13 @@ public partial class OrderPage : ContentPage
         await App.Database.DeleteOrderListAsync(slist);
         await Navigation.PopAsync();
     }
+    async void OnChooseButtonClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new DessertPage((OrderList)
+       this.BindingContext)
+        {
+            BindingContext = new Dessert()
+        });
 
+    }
 }

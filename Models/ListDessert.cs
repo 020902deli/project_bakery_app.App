@@ -9,12 +9,12 @@ using SQLiteNetExtensions.Attributes;
 
 namespace project_bakery_app.Models
 {
-    public class ListProduct
+    public class ListDessert
     {
         [PrimaryKey, AutoIncrement]
         public int ID { get; set; }
         [ForeignKey(typeof(OrderList))]
         public int OrderListID { get; set; }
-        public int ProductID { get; set; }
+        public int DessertID { get; set; }
     }
 }
