@@ -13,6 +13,9 @@
     <ShellContent
         Title="My Orders"
         ContentTemplate="{DataTemplate local:OrderEntryPage}"
+        />    <ShellContent
+         Title="Bakers"
+         ContentTemplate="{DataTemplate local:BakerEntryPage}"
         />    </TabBar>
 
 </Shell>

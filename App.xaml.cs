@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SQLite;
+using SQLiteNetExtensions;
+using System;
 using project_bakery_app.Data;
 using System.IO;
 namespace project_bakery_app;

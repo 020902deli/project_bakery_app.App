@@ -1,4 +1,5 @@
 ﻿using SQLite;
+using SQLiteNetExtensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,25 @@ namespace project_bakery_app.Data
             _database.CreateTableAsync<OrderList>().Wait();
             _database.CreateTableAsync<Dessert>().Wait();
             _database.CreateTableAsync<ListDessert>().Wait();
+            _database.CreateTableAsync<Baker>().Wait();
         }
+        //pentru bakers
+        public Task<List<Baker>> GetBakersAsync()
+        {
+            return _database.Table<Baker>().ToListAsync();
+        }
+        public Task<int> SaveBakerAsync(Baker baker)
+        {
+            if (baker.ID != 0)
+            {
+                return _database.UpdateAsync(baker);
+            }
+            else
+            {
+                return _database.InsertAsync(baker);
+            }
+        }
+
         //pentru dessert
         public Task<int> SaveDessertAsync(Dessert dessert)
         {

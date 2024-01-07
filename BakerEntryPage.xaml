@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="project_bakery_app.BakerEntryPage"
+             Title="BakerEntryPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add Baker"
+                        Clicked="OnBakerAddedClicked" />
+    </ContentPage.ToolbarItems>
+    <ListView x:Name="listView"
+             Margin="20"
+             ItemSelected="OnListViewItemSelected">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell Text="{Binding BakerDetails}"
+                            Detail="{Binding Telefon}" />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>
