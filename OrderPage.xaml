@@ -5,30 +5,55 @@
              xmlns:local="clr-namespace:project_bakery_app"
              Title="OrderPage">
     <StackLayout Margin="20">
+        <Label
+            Text="Order description:"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            HorizontalOptions="Start" />
+        
         <Editor Placeholder="Enter the description of the order"
                 Text="{Binding Description}"
                 HeightRequest="50" >
             <Editor.Behaviors>
                 <local:ValidationBehaviour />
             </Editor.Behaviors>
-        </Editor>        <Editor Placeholder="Enter the adress of the order"
+        </Editor>
+        <Label
+            Text="Order Address:"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            HorizontalOptions="Start" />
+        <Editor Placeholder="Enter the adress of the order"
         Text="{Binding Adress}"
-        HeightRequest="100" >
+        HeightRequest="50" WidthRequest="-1">
             <Editor.Behaviors>
                 <local:ValidationBehaviour />
             </Editor.Behaviors>
-        </Editor>
-        <Grid>
+        </Editor>
+        <Grid >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="*" />
+
             </Grid.ColumnDefinitions>
-            <Button Text="Save"
-                    Clicked="OnSaveButtonClicked" />
-            <Button Grid.Column="1"
-                    Text="Delete"
-                    Clicked="OnDeleteButtonClicked"/>
+            <Button Text="Show on Map" Grid.Column="1" 
+            MaximumWidthRequest="200"
+             Clicked="OnShowMapButtonClicked"></Button>
+
         </Grid>
+        <BoxView HeightRequest="10" Color="Transparent" />
+        <Label
+            Text="Baker:"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            HorizontalOptions="Start" />
+        <Picker x:Name="Baker" Title="Enter Baker Name"/>
+    
+    
+        <Label
+            Text="Ordered desserts:"
+            SemanticProperties.HeadingLevel="Level2"
+            FontSize="18"
+            HorizontalOptions="Start" />
         <ListView x:Name="listView"
                 Margin="20">
             <ListView.ItemTemplate>
@@ -38,14 +63,23 @@
                 
             </ListView.ItemTemplate>
         </ListView>
-        <Grid>
+        <Grid ColumnSpacing="10">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
-            <Button Text="Show on Map" Grid.Column="1"
-                    MaximumWidthRequest="200"
-                     Clicked="OnShowMapButtonClicked"></Button>
+            <Button Text="Save"
+            Clicked="OnSaveButtonClicked" />
+            <Button Grid.Column="1"
+            Text="Delete"
+            Clicked="OnDeleteButtonClicked"/>
+        </Grid>
+        <BoxView HeightRequest="10" Color="Transparent" />
+        <Grid >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+
+            </Grid.ColumnDefinitions>
             <Button Text="Add/Choose Dessert to buy" MaximumWidthRequest="300"
                     Clicked="OnChooseButtonClicked"/>
             
