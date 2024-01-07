@@ -17,6 +17,7 @@
             <Editor Placeholder="Telefon" Margin="20"
                     Text="{Binding Telefon}"
                     HeightRequest="50" />
+            
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
@@ -30,6 +31,7 @@
                 <Button Text="Save Baker" Grid.Column="0"
                         MaximumWidthRequest="200"
                         Clicked="OnSaveButtonClicked" />
+                
                 </Grid>
         </StackLayout>
     </ContentPage.Content>

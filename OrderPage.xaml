@@ -11,6 +11,12 @@
             <Editor.Behaviors>
                 <local:ValidationBehaviour />
             </Editor.Behaviors>
+        </Editor>        <Editor Placeholder="Enter the adress of the order"
+        Text="{Binding Adress}"
+        HeightRequest="100" >
+            <Editor.Behaviors>
+                <local:ValidationBehaviour />
+            </Editor.Behaviors>
         </Editor>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -27,8 +33,9 @@
                 Margin="20">
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <TextCell Detail="{Binding Description}" />
+                    <TextCell Detail="{Binding Description}"  />
                 </DataTemplate>
+                
             </ListView.ItemTemplate>
         </ListView>
         <Grid>
@@ -36,6 +43,9 @@
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
+            <Button Text="Show on Map" Grid.Column="1"
+                    MaximumWidthRequest="200"
+                     Clicked="OnShowMapButtonClicked"></Button>
             <Button Text="Add/Choose Dessert to buy" MaximumWidthRequest="300"
                     Clicked="OnChooseButtonClicked"/>
             

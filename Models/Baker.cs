@@ -16,6 +16,7 @@ namespace project_bakery_app.Models
         public string Prenume { get; set; }
         public string Email { get; set; }
         public string Telefon { get; set; }
+        public string Adress { get; set; }
 
         public string BakerDetails
         {
